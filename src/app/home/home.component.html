@@ -1,0 +1,12 @@
+<section>
+  <form>
+    <input type="text" placeholder="Filter by city" [(ngModel)]="term" [ngModelOptions]="{standalone: true}">
+  </form>
+</section>
+<section class="results">
+
+  <app-housing-location
+    *ngFor="let housingLocation of  housingLocationList | filterHomes:term"
+    [housingLocation]="housingLocation">
+  </app-housing-location>
+</section>
